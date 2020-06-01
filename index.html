@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="geo.placename" content="Moscow">
+    <meta name="robots" content="index,follow">
+    <title>Заправка и ремонт домашних и офисных кондиционеров</title>
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/aos.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/css/simple-line-icons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="call-back-btn" id="btn-callback-phone-icon">
+        <div class="pulse1"></div>
+        <div class="pulse2"></div>
+        <div class="profilepicture"><img src="assets/img/phone.png" width="100%" height="100%"></div>
+    </div>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar-main">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="phone-link animated-phone-number visible-xs" href="tel:+7">+7 (100) 200-30-40</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="active"><a href="#glavnaya">Главная</a></li>
+                    <li><a href="#aczii">Почему мы?</a></li>
+                    <li><a href="#call-master">Вызвать мастера</span></a></li>
+                    <li><a href="#price-list">Стоимость услуг</a></li>
+                </ul>
+                <a class="navbar-right phone-link hidden-xs" href="tel:+7">+7 (100) 200-30-40</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="success-modalModalLabel" id="success-modal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center" id="success-modalLabel">Спасибо! Наш менеджер свяжется с Вами</h4>
+            </div>
+            <div class="modal-footer">
+                <div class="text-center">
+                <button type="button" class="btn btn-default btn-order-call"  style="padding-left: 20px; padding-right: 20px;" id="success-modal-ok">OK</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" id="callback-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title hidden-xs" id="myModalLabel">Укажите номер телефона и наш менеджер свяжется с Вами</h4>
+                <p class="modal-title text-center visible-xs" id="myModalLabel" style="font-size: 16px;">Укажите номер телефона и наш менеджер свяжется с Вами<p>
+            </div>
+            <div data-form-type="formoid">
+                <form class="form-inline" action="https://mobirise.com/" method="post" data-form-title="Заявка с " onsubmit="$('#callback-modal').modal('hide');$('#success-modal').modal('show');">
+                    <div class="modal-body">
+                        <input type="hidden" data-form-email="true" value="">
+                            <div class="text-center">
+                                <div class="form-group" data-for="phone">
+                                    <label class="sr-only" for="inputNumber">Телефон</label>
+                                    <input type="tel" class="form-control input-lg" name="phone" data-form-field="Телефон" id="inputNumber" placeholder="+7 (___) ___-__-__" required onclick="$('#inputNumber').val('+7');">
+                                    <button type="submit" class="btn btn-default btn-lg btn-order-call hidden-xs">ЗАПИСАТЬСЯ</button>
+                                    <button type="submit" class="btn btn-default btn-lg btn-order-call visible-xs" style="width: 100%; margin-top: 10px;">ЗАПИСАТЬСЯ</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group" data-for="goal">
+                                <input type="text" class="form-control input-lg" style="display: none;" name="goal" data-form-field="Причина" id="inputSite" placeholder="" value="Клиент заказал обратный звонок">
+                            </div>
+                            <div class="form-group" data-for="time">
+                                <input type="text" class="form-control input-lg" style="display: none;" name="time" data-form-field="Время у клиента" id="inputTime" placeholder="" value="">
+                            </div>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section-start-image-doc" id="glavnaya">  
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 col-xs-12 custom-main-scr">
+                    <p class="fontStart" data-aos="fade-up">ЗАПРАВКА ДОМАШНИХ И ОФИСНЫХ КОНДИЦИОНЕРОВ</p>
+                </div>
+                <div class="col-md-4 hidden-xs"></div>
+            </div>
+            <!-- <span class="hidden-xs"><br><br><br><br></span> -->
+            <div class="hidden-xs" style="height: 6vh !important;"></div>
+            <span class="visible-xs"><br></span>
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                    <p class="fontStart1" data-aos="fade-up">Весь спектр услуг по ремонту кондиционеров</p>
+
+                    <div class="text-center">
+                            <div data-form-type="formoid">
+                                <form action="https://mobirise.com/" method="post" data-form-title="Заявка с " onsubmit="$('#success-modal').modal('show');">
+                                    <input type="hidden" data-form-email="true" value="">
+                                    <div class="row">
+                                        <div class="col-md-3 col-xs-6 hidden-xs" style="padding-left: 0;"></div>
+                                        <div class="visible-xs" style="padding-bottom: 20px;"></div>
+                                        
+                                        <div class="col-md-3 col-xs-12">
+                                            <div class="form-group form-group-lg" data-for="phone">
+                                                <input type="tel" class="form-control" style="padding-top:25px; padding-bottom: 25px;" name="phone" data-form-field="Телефон" placeholder="+7 (___) ___ - __ - __" aria-describedby="phone-callback-1" id="inputNumber1" required onclick="$('#inputNumber1').val('+7');">
+                                            </div>
+                                        </div>
+                
+                                        <div data-for="goal">
+                                            <input type="text" class="form-control input-lg" style="display: none;" name="goal" data-form-field="Причина" id="inputSite2" placeholder="" value="Клиент вызывает специалиста">
+                                        </div>
+                                        <div data-for="time">
+                                            <input type="text" class="form-control input-lg" style="display: none;" name="time" data-form-field="Время у клиента" id="inputTime2" placeholder="" value="">
+                                        </div>
+                
+                                        <div class="col-md-3 hidden-xs custom-request-form">
+                                            <div class="form-group form-group-lg">
+                                                <input role="button" type="submit" class="btn btn-default btn-order-call btn-lg" style="padding-top:13px; padding-bottom: 13px;" value="ВЫЗВАТЬ СПЕЦИАЛИСТА">
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-md-3 col-xs-12 visible-xs">
+                                            <div class="form-group form-group-lg">
+                                                <input role="button" type="submit" class="btn btn-default btn-order-call btn-lg" style="padding-top:13px; padding-bottom: 13px; width: 100%;" value="ВЫЗВАТЬ СПЕЦИАЛИСТА">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> 
+                            <div class="col-md-2 hidden-xs"></div>  
+                    </div>
+                </div>
+            </div>
+
+            <div class="mbr-arrow mbr-arrow-floating hidden-xs" style="bottom: 6px;" aria-hidden="true">
+                <a href="#aczii" class="btn-border-dark"><i class="mbr-arrow-icon"></i></a>
+            </div>            
+        </div>
+    </section>
+
+
+    <section class="section-gray" id="aczii" style="padding-top: 60px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="text-center">
+                            <h1 class="font-why" data-aos="fade-up">Почему именно Мы?</h1>
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                            <div class="row">
+                                    <div class="col-md-3" data-aos="fade-up" data-aos-duration="2000">
+                                        <div class="text-center">
+                                            <i class="icon-badge height-icons"></i>
+                                            <p class="font-why-description">КАЧЕСТВО</p>
+                                            <p class="font-why-description-details">Гарантия на все виды работ и услуг - лучшее доказательство нашей уверенности в качестве.</p>
+                                        </div>
+                                    </div>
+                
+                                    <div class="col-md-3" data-aos="fade-up" data-aos-duration="2000">
+                                        <div class="text-center">
+                                            <i class="icon-wallet height-icons"></i>
+                                            <p class="font-why-description">ПРИЯТНЫЕ ЦЕНЫ</p>
+                                            <p class="font-why-description-details">Приятные цены, скидочные и бонусные системы, позволяющие нашим услугам быть еще более доступными.</p>
+                                        </div>
+                                    </div>
+                
+                                    <div class="col-md-3" data-aos="fade-up" data-aos-duration="2000">
+                                        <div class="text-center">
+                                            <i class="icon-like height-icons"></i>
+                                            <p class="font-why-description">ПРОФЕССИОНАЛИЗМ</p>
+                                            <p class="font-why-description-details">Колоссальный опыт наших мастеров обеспечивает профессиональный подход и качественное обслуживание каждого клиента. </p>
+                                        </div>
+                                    </div>
+                
+                                    <div class="col-md-3" data-aos="fade-up" data-aos-duration="2000">
+                                        <div class="text-center">
+                                            <i class="icon-rocket height-icons"></i>
+                                            <p class="font-why-description">СКОРОСТЬ</p>
+                                            <p class="font-why-description-details">Наши высококвалифицированные мастера помогут решить вашу проблему быстро и качественно</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br><br><br><br>
+                                <div class="row">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-3" data-aos="fade-up" data-aos-duration="2500">
+                                            <div class="text-center">
+                                                <i class="icon-cup height-icons"></i>
+                                                <p class="font-why-description">УДОБСТВО</p>
+                                                <p class="font-why-description-details">Различные варианты записи, быстрый выезд мастера и ремонт прямо на месте.</p>
+                                            </div>
+                                    </div>
+                
+                                    <div class="col-md-3" data-aos="fade-up" data-aos-duration="2500">
+                                            <div class="text-center">
+                                                <i class="icon-wrench height-icons"></i>
+                                                <p class="font-why-description">УНИВЕРСАЛЬНОСТЬ</p>
+                                                <p class="font-why-description-details">Наши специалисты починят любую систему, опыт им это позволяет.</p>
+                                            </div>
+                                    </div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+    </section>
+
+    <section class="section-request-call-now">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12" data-aos="zoom-in">
+                        <h1 class="font-ad-header text-center hidden-xs">Оставьте заявку на ремонт кондиционера сейчас<br>и получите выгодное предложение!</h1>
+                        <h1 class="font-ad-header text-center visible-xs">Оставьте заявку на ремонт кондиционера сейчас и получите выгодное предложение!</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 col-xs-1"></div>
+                    <div class="col-md-10 col-xs-10">
+                        <div class="text-center" data-aos="fade-up" data-aos-duration="3000">
+                            <p class="font-ad-text"><i class="icon-check" style="font-weight: bold;color:green;font-size: 25px;"></i> ГАРАНТИЮ - 1 год на выполненные работы</p>
+                            <p class="font-ad-text"><i class="icon-check" style="font-weight: bold;color:green;font-size: 25px;"></i> СКИДКУ 10% на заправку кондиционера при заказе на сайте!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+    </section>
+
+    <section class="section-gray" style="background-color: #fff;" id="feedback">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12" data-aos="fade-up">
+                        <p class="font-feedback-header text-center">Отзывы наших клиентов</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-1 hidden-xs"></div>
+                    <div class="col-md-10" data-aos="fade-up">
+                        <div class="feedback-block">
+                            <p class="font-feedback-text text-center">Мы создали заявку на сайте, позвонил очень грамотный специалист и проконсультировал по срокам и стоимости. Приехали к нам в офис, и сделали прямо на месте, причем очень быстро. Мы были удивлены, приятно. Еще и скидку получили. Отличный сервис!</p>
+                        </div>
+                        <div class="text-center">
+                                <span><img src="assets/img/face2.jpg" class="img-circle feedback-img" height="100">
+                                    <div class="feedback-img-txt">
+                                        Мария А.
+                                    </div>
+                                </span>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+
+                <div class="row" style="padding-top: 50px;">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10" data-aos="fade-up">
+                            <div class="feedback-block">
+                                <p class="font-feedback-text text-center">Очень довольны работой, по настоящему профессионалы своего дела. Сделали быстро и качественно, дали гарантию, все по делу. Уважаю такой подход! Успехов вам и дальнейшего развития!</p>
+                            </div>
+                            <div class="text-center">
+                                    <span><img src="assets/img/face1.jpg" class="img-circle feedback-img" height="100">
+                                        <div class="feedback-img-txt">
+                                            Александр Г.
+                                        </div>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                </div>
+
+                <div class="row" style="padding-top: 50px;padding-bottom: 50px;">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10" data-aos="fade-up">
+                            <div class="feedback-block">
+                                <p class="font-feedback-text text-center">Обращались в первый раз, у нас сломался кондиционер в офисе. К вечеру уже починили, дали все необходимые документы. Цены приятные. Офис большой, по этому если будет необходимость, то обратимся снова! Спасибо!</p>
+                            </div>
+                            <div class="text-center">
+                                <span><img src="assets/img/face3.jpg" class="img-circle feedback-img" height="100">
+                                    <div class="feedback-img-txt">
+                                        Екатерина А.
+                                    </div>
+                                </span>
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-1"></div>
+                </div>
+            </div>
+    </section>
+
+    <section class="section-secondary slogan" id="call-master" data-aos="fade-up">
+            <div class="container-fluid" data-form-type="formoid">
+                <form class="form" action="https://mobirise.com/" method="post" data-form-title="Заявка с " onsubmit="$('#success-modal').modal('show');">
+                <div class="row">
+                    <div class="col-md-1 hidden-xs"></div>
+                    <div class="col-md-4 call-back-form-header">
+                        <h1 class="fontCarousel" data-aos="fade-up">Оставьте заявку прямо сейчас</h1><br>
+                    </div>
+                    <div class="col-md-7 text-center hidden-xs" style="padding-top: 14vh;" data-aos="zoom-in" data-aos-duration="2500">
+                            <i class="fa icon-settings fa-spin fa-4x fa-fw features-icon"></i> <span class="font-features-repair">РЕМОНТ КОНДИЦИОНЕРОВ</span>
+                    </div>
+                </div>
+    
+                <div class="row">
+                        <div class="col-md-1 hidden-xs"></div>
+                        <div class="col-md-4 call-back-form-inputs">
+                            <input type="hidden" data-form-email="true" value="">
+    
+                            <div class="form-group" data-for="phone">
+                                <label class="sr-only" for="phone">Телефон</label>
+                                <input data-aos="fade-up" type="tel" class="form-control input-lg" name="phone" data-form-field="Телефон" id="phone" placeholder="+7 (___) ___ - __ - __" required onclick="$('#phone').val('+7');">
+                            </div>
+                            <div class="form-group" data-for="goal">
+                                <input type="text" class="form-control input-lg" style="display: none;" name="goal" data-form-field="Причина" id="inputSite3" placeholder="" value="Клиент подал заявку">
+                            </div>
+                            <div class="form-group" data-for="time">
+                                <input type="text" class="form-control input-lg" style="display: none;" name="time" data-form-field="Время у клиента" id="inputTime3" placeholder="" value="">
+                            </div>
+                            <br class="hidden-xs">
+                        </div>
+                        <div class="col-md-7 text-center hidden-xs" style="padding-top: 10vh;" data-aos="zoom-in" data-aos-duration="2500">
+                                <i class="fa icon-refresh fa-spin fa-4x fa-fw features-icon"></i> <span class="font-features-repair">ЗАПРАВКА КОНДИЦИОНЕРОВ</span>
+                        </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-md-1 hidden-xs"></div>
+                    <div class="col-md-4 call-back-form-inputs">
+                        <div class="form-group" data-for="message">
+                            <label class="sr-only" for="message">Сообщение</label>
+                            <textarea data-aos="fade-up" class="form-control" style="width:100%; resize: none;" rows="10" name="message" data-form-field="Сообщение" id="message" placeholder="Ваше сообщение" required></textarea>
+                        </div>
+                        <br class="hidden-xs">
+                    </div>
+                    <div class="col-md-7 text-center hidden-xs" style="padding-top: 18vh;" data-aos="zoom-in" data-aos-duration="2500">
+                        <i class="fa icon-support fa-spin fa-4x fa-fw features-icon"></i> <span class="font-features-repair">ОБСЛУЖИВАНИЕ</span>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-md-1 hidden-xs"></div>
+                    <div class="col-md-4 call-back-form-inputs">
+                        <input type="submit" class="btn btn-default btn-order-call btn-lg" value="ОСТАВИТЬ ЗАЯВКУ"/>
+                    </div>
+                </div>
+
+                <div class="visible-xs" style="padding-bottom: 100px;"></div>
+            </form>
+            </div>
+          </section>
+
+          <section class="section-gray-svc" id="price-list">
+                <div class="container">
+                  <h2 class="h2-services" id="webasto">Цены на обслуживание кондиционеров</h2><br>
+                  <table class="table table-hover table-bordered" style="background: white;" data-aos="fade-up">
+                    <thead class="bg-color-2 ">
+                        <tr>
+                            <th>Услуга</th>
+                            <th>Стоимость руб.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>
+                            Дозаправка хладагентом кондиционеров до 3.5 кВт. /до 7 кВт. (с фреоном)
+                          </td>
+                          <td>
+                                2000
+                          </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Работы по заправке хладагентом кондиционеров до 3.5 кВт. / до 7 кВт.
+                            </td>
+                            <td>
+                                3000
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Вакуумирование
+                            </td>
+                            <td>
+                                750
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Пайка медной трубы ( до 3/4) за одну точку
+                            </td>
+                            <td>
+                                500
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Мелкий ремонт на месте
+                            </td>
+                            <td>
+                                890
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Подмосковье (если свыше 10 км от МКАД, за 1 км) 
+                            </td>
+                            <td>
+                                45
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Простой ремонтной бригады по вине заказчика(за 1 час)
+                            </td>
+                            <td>
+                                500
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Выезд мастера
+                            </td>
+                            <td>
+                                500
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Диагностика настенной сплит-системы
+                            </td>
+                            <td>
+                                800
+                            </td>
+                        </tr>
+                    </tbody>
+                  </table>
+                  
+            
+                  <h2 class="h2-services" id="separator">Стоимость устранения утечки фреона</h2>
+                  <br>
+                  <table class="table table-hover table-bordered" style="background: white;" data-aos="fade-up">
+                        <thead class="bg-color-2 ">
+                                <tr>
+                                    <th class="col-md-6">Услуга</th>
+                                    <th class="col-md-4">Количество</th>
+                                    <th class="col-md-2">Стоимость руб.</th>
+                                </tr>
+                            </thead>
+                      <tbody>
+                          <tr>
+                              <td>
+                                Устранение утечки фреона ( до 5 м.п.)
+                              </td>
+                              <td>
+                                1 услуга
+                              </td>
+                              <td>
+                                1000
+                              </td>
+                          </tr>
+                          <tr>
+                                <td>
+                                    Поиск утечки фреона ( до 5 м.п.)(при своб. доступе к трассе)
+                                </td>
+                                <td>
+                                    1 услуга
+                                </td>
+                                <td>
+                                  1000
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                    Пайка медной трубы до 3/4
+                                </td>
+                                <td>
+                                    1 точка
+                                </td>
+                                <td>
+                                    500
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                    Вальцовка медной трубы
+                                </td>
+                                <td>
+                                    1 соединение
+                                </td>
+                                <td>
+                                    600
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                    Вакуумация системы до 7 кВт
+                                </td>
+                                <td>
+                                    1 трасса
+                                </td>
+                                <td>
+                                    750
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                    Работа по заправке фреоном R-22А до 7 / 10 / 17 кВт (без стоимости фреона)
+                                </td>
+                                <td>
+                                    1 услуга
+                                </td>
+                                <td>
+                                    1890 / 2790 / 3590
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                    Работа по заправке фреоном R-410А до 7 / 10 / 17 кВт (без стоимости фреона)
+                                </td>
+                                <td>
+                                    1 услуга
+                                </td>
+                                <td>
+                                    1890 / 2790 / 3590
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                    Стоимость фреона R-22A
+                                </td>
+                                <td>
+                                    100 гр
+                                </td>
+                                <td>
+                                    300
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                    Стоимость фреона R-410A
+                                </td>
+                                <td>
+                                    100 гр
+                                </td>
+                                <td>
+                                    300
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                    Замена ниппеля
+                                </td>
+                                <td>
+                                    1 услуга
+                                </td>
+                                <td>
+                                    680
+                                </td>
+                        </tr>
+                      </tbody>
+                  </table>
+            
+                  <h2 class="h2-services" id="signal">Стоимость ремонта дренажной системы и сопутствующие работы</h2>
+                  <br>
+                  <table class="table table-hover table-bordered" style="background: white;" data-aos="fade-up">
+                        <thead class="bg-color-2 ">
+                                <tr>
+                                    <th class="col-md-6">Услуга</th>
+                                    <th class="col-md-4">Количество</th>
+                                    <th class="col-md-2">Стоимость руб.</th>
+                                </tr>
+                            </thead>
+                      <tbody>
+                          <tr>
+                              <td>
+                                Ремонт дренажной системы до 10 м.п.
+                              </td>
+                              <td>
+                                    1 трасса
+                              </td>
+                              <td>
+                                    от 500
+                              </td>
+                          </tr>
+                          <tr>
+                                <td>
+                                        Устранение засора в дренажной системе
+                                </td>
+                                <td>
+                                        до 10 м
+                                </td>
+                                <td>
+                                        от 980
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                        Продувка, промывка дренажной системы
+                                </td>
+                                <td>
+                                        до 5 м
+                                </td>
+                                <td>
+                                        от 1230
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                        Замена дренажного насоса (помпы) без учета помпы
+                                </td>
+                                <td>
+                                        1 услуга
+                                </td>
+                                <td>
+                                        3500
+                                </td>
+                        </tr>
+                      </tbody>
+                  </table>
+            
+                  
+                  <br>
+                  <p>Вся представленная на сайте информация о стоимости товаров и/или услуг, носит информационный характер и ни при каких условиях не является публичной офертой.</p>
+                </div>
+              </section>
+
+              <footer>
+                    <div class="container">
+                        <div class="footer-call">
+                            <div class="row">
+                                <div class="col-md-4 col-xs-12 social-icons-mobile">
+                                    <i class="fa fa-whatsapp fa-3x" aria-hidden="true" style="color: rgb(77, 243, 77);"></i><span class="phone-whatsapp"> +7 (100) 200-30-40</span>
+                                </div>
+                                <div class="col-md-4 col-xs-12 social-icons-mobile">
+                                        <i class="fa fa-telegram fa-3x" aria-hidden="true" style="color: rgb(77, 135, 243);"></i><span class="phone-whatsapp"> +7 (100) 200-30-40</span>
+                                </div>
+                                <div class="col-md-4 col-xs-12 social-icons-mobile">
+                                    <i class="fa fa-whatsapp fa-3x" aria-hidden="true" style="color: rgb(164, 44, 194);"></i><span class="phone-whatsapp"> +7 (100) 200-30-40</span>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="text-center">
+                                <p>Заправка и ремонт кондиционеров любой сложности в Москве и Подмосковье.<br>Устранение утечки фреона, заправка хладагентом, диагностика, вакуумирование.<br>Вызвать мастера в офис или домой.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="margin-bottom:0;padding-bottom:0;color: #FAFAFA;">&copy; 2018 <a href="http://" style="color: #FAFAFA;">site.com</a></p>
+                    <div class="line-bottom width-sm2"></div>
+                    <br><br>
+              </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/formoid.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+  </body>
+</html>
